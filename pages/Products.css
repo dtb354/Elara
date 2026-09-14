@@ -1,0 +1,22 @@
+/* A page can also override shared layout, not just its own elements. */
+body[data-page="products"] #app {
+  max-width: 900px;
+}
+
+body[data-page="products"] .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+body[data-page="products"] .card {
+  margin-bottom: 0;
+  text-align: center;
+  padding: 28px 16px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+body[data-page="products"] .card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}

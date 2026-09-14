@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    // Highlights and validates HTML inside html`...` tagged templates.
+    "runem.lit-plugin",
+    // Already installed: serves the app over http:// so ES modules load.
+    "ritwickdey.liveserver"
+  ]
+}

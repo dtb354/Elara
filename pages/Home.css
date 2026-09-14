@@ -1,0 +1,16 @@
+/* Every selector is scoped to the active page, so these rules can never
+   leak into About or Products even though the file stays loaded. */
+body[data-page="home"] h1 {
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body[data-page="home"] .lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+}

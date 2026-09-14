@@ -1,0 +1,11 @@
+/* Same .card class as Products, styled differently on this page only. */
+body[data-page="about"] .card {
+  border-left: 3px solid var(--accent);
+  padding: 20px 24px;
+}
+
+body[data-page="about"] .card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+}

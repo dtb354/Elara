@@ -1,0 +1,97 @@
+/* Shared base: design tokens, chrome, layout and transitions.
+   Page-specific rules live in pages/<Name>.css, scoped to body[data-page="..."]. */
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --accent: #6ee7b7;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #262a33;
+  background: var(--panel);
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+nav a.active {
+  color: var(--bg);
+  background: var(--accent);
+  font-weight: 600;
+}
+
+#app {
+  padding: 40px 24px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #262a33;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* View Transitions API: name the outgoing/incoming region so the
+   browser animates between them instead of a hard swap. */
+#app {
+  view-transition-name: main-view;
+}
+
+::view-transition-old(main-view) {
+  animation: fade-out 0.2s ease forwards;
+}
+
+::view-transition-new(main-view) {
+  animation: fade-in 0.25s ease forwards;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
