@@ -1,4 +1,4 @@
-# Vanilla SPA
+# Elara SPA
 
 A single-page app with no framework and no build step. Routing is the hash API,
 page transitions use the native View Transitions API, and pages are ES modules
